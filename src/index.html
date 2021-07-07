@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('components/page/_1_head.html',{ 'title': 'Заголовок', 'description': 'Описание', 'keywords': 'Ключевые слова', 'favicon': 'img/favicon/favicon.png' })
+
+<body>
+    <div class="wrapper">
+        <div class="top-img">
+            <img src="img/top-wrap-bg.png" />
+        </div>
+        @@include('components/page/_2_header.html')
+
+        <div class="top-wrap">
+            <div class="container">
+                <div class="title">Отремонтируем телевизор любой модели<br> <span>за 2 часа</span> в день обращения у вас дома с гарантией до 3-х лет </div>
+                <form method="post" class="top-form" action="/">
+                    <div class="title">Узнать стоимость ремонта Вашего ТВ за 2 минуты</div>
+                    <select name="" id="select-problem">
+                        <option value="Выберите неисправность ТВ" selected disabled>Выберите неисправность ТВ</option>
+                        <option value="Не включается">Не включается</option>
+                        <option value="Не показывает">Не показывает</option>
+                        <option value="Нет сигнала">Нет сигнала</option>
+                        <option value="Нет звука">Нет звука</option>
+                        <option value="Не переключает каналы">Не переключает каналы</option>
+                    </select>
+                    <input type="text" placeholder="Марка, модель ТВ">
+                    <input type="tel" placeholder="Ваш телефон">
+                    <button type="submit" class="btn-orange">Узнать стоимость</button>
+                </form>
+            </div>
+        </div>
+
+        @@include('components/page/_3_footer.html')
+    </div>
+
+    @@include('components/page/_4_scripts.html')
+</body>
+
+</html>
