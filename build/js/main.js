@@ -33,6 +33,13 @@ $(function() {
 
 });
 
+$("#modal").on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget);
+    var recipient = button.data('form');
+    var modal = $(this);
+    modal.find('.hidden-input').val(recipient);
+});
+
 $('.btn-more').click(function(e) {
     e.preventDefault();
     if ($(this).closest('.rewiews').hasClass('active')) {

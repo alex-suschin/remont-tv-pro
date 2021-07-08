@@ -42,7 +42,7 @@
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
             <a href="tel:+71111111111" class="phone">+7 1111111111</a>
-            <a href="javascript: void(0);" data-toggle="modal" data-target="#modal" class="btn-orange">Оставить заявку</a>
+            <a data-form="Кнопка в шапке" href="javascript: void(0);" data-toggle="modal" data-target="#modal" class="btn-orange">Оставить заявку</a>
             <a id="hamburger-icon" href="javascript: void(0);" title="Menu">
                 <span class="line line-1"></span>
                 <span class="line line-2"></span>
@@ -56,6 +56,7 @@
             <div class="container">
                 <div class="title">Отремонтируем телевизор любой модели<br> <span>за 2 часа</span> в день обращения у вас дома с гарантией до 3-х лет </div>
                 <form method="post" class="top-form" action="/">
+                    <input type="hidden" class="hidden-input" value="Форма в шапке">
                     <div class="title">Узнать стоимость ремонта Вашего ТВ за 2 минуты</div>
                     <select name="" id="select-problem">
                         <option value="Выберите неисправность ТВ" selected disabled>Выберите неисправность ТВ</option>
@@ -96,7 +97,7 @@
                 <div class="title">Что сломалось?</div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="breaking-item">
+                        <a data-form="Не включается" href="javascript: void(0);" data-toggle="modal" data-target="#modal" class="breaking-item">
                             <img src="img/tv-1.png" alt="">
                             <div class="breaking-item__title">Не включается</div>
                             <ul>
@@ -106,10 +107,10 @@
                                 <li>Разъем питания (ремонт)</li>
                             </ul>
                             <div class="breaking-item__price">От 550 Р</div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-lg-6">
-                        <div class="breaking-item">
+                        <a data-form="Не показывает" href="javascript: void(0);" data-toggle="modal" data-target="#modal" class="breaking-item">
                             <img src="img/tv-2.png" alt="">
                             <div class="breaking-item__title">Не показывает</div>
                             <ul>
@@ -119,10 +120,10 @@
                                 <li>Экран телевизора (замена)</li>
                             </ul>
                             <div class="breaking-item__price">От 590 Р</div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-lg-4">
-                        <div class="breaking-item breaking-item-no-img">
+                        <a data-form="Нет сигнала" href="javascript: void(0);" data-toggle="modal" data-target="#modal" class="breaking-item breaking-item-no-img">
                             <div class="breaking-item__title">Нет сигнала</div>
                             <ul>
                                 <li>Проверить телеприем</li>
@@ -131,10 +132,10 @@
                                 <li>Системный блок (ремонт)</li>
                             </ul>
                             <div class="breaking-item__price">От 450 Р</div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-lg-4">
-                        <div class="breaking-item breaking-item-no-img">
+                        <a data-form="Нет звука" href="javascript: void(0);" data-toggle="modal" data-target="#modal" class="breaking-item breaking-item-no-img">
                             <div class="breaking-item__title">Нет звука</div>
                             <ul>
                                 <li>Системная плата (ремонт)</li>
@@ -143,10 +144,10 @@
                                 <li>Колонки (замена)</li>
                             </ul>
                             <div class="breaking-item__price">От 590 Р</div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-lg-4">
-                        <div class="breaking-item breaking-item-no-img">
+                        <a data-form="Не переключает каналы" href="javascript: void(0);" data-toggle="modal" data-target="#modal" class="breaking-item breaking-item-no-img">
                             <div class="breaking-item__title">Не переключает каналы</div>
                             <ul>
                                 <li>Проверить пульт управления</li>
@@ -155,10 +156,11 @@
                                 <li>ТВ тюнер (замена)</li>
                             </ul>
                             <div class="breaking-item__price">От 490 Р</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <form action="/" class="form-breaking" method="post">
+                    <input type="hidden" class="hidden-input" value="Форма в блоке поломок">
                     <input type="tel" required placeholder="Ваш телефон">
                     <button type="submit" class="btn-orange">Вызвать мастера</button>
                 </form>
@@ -174,6 +176,7 @@
                     <div class="date-sale">До конца акции осталось: <span>25 дней</span></div>
                     <b>Оставьте заявку, чтобы успеть сэкономить</b>
                     <form action="/" method="post">
+                        <input type="hidden" class="hidden-input" value="Форма в блоке скидок">
                         <input type="tel" required placeholder="Ваш телефон">
                         <button type="submit" class="btn-orange">Получить скидку</button>
                     </form>
@@ -342,7 +345,7 @@
                 <div class="desc">
                     Во время консультации, наш специалист узнает причины неисправности Вашего телевизора и вместе с Вами попробует ее устранить <b>совершенно бесплатно</b>
                 </div>
-                <a href="#" class="btn-orange">Консультация</a>
+                <a data-form="Кнопка консультация" href="javascript: void(0);" data-toggle="modal" data-target="#modal" class="btn-orange">Консультация</a>
             </div>
         </div>
 
@@ -370,6 +373,25 @@
         </div>
     </div>
 </footer>
+
+        <div id="modal" class="modal fade">
+            <div class="modal-dialog popup__dialog" role="document">
+                <div class="modal-content popup__content">
+                    <div class="modal-close close" data-dismiss="modal"></div>
+                    <div class="popup-title">Оставьте заявку</div>
+                    <div class="popup-desc">Мы перезвоним в течение 15 минут</div>
+                    <form class="form-popup" method="POST" action="/">
+                        <input type="hidden" class="hidden-input" value="Форма в попапе">
+                        <span><input type="tel" required placeholder="+7   ___-___-__-__"></span>
+                        <button type="submit" class="btn-orange">Отправить заявку</button>
+                    </form>
+                    <div class="agree">Нажимая кнопку “Оставить заявку”, я даю<br> согласие на обработку персональных данных</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     </div>
 
     <script src="js/vendor.min.js"></script>
