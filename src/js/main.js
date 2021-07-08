@@ -1,20 +1,47 @@
 $(function() {
 
-    $(window).scroll(function() {
-        if ($(window).width() > '991') {
-            if ($(this).scrollTop() > 90) {
-                $('.header').addClass('fixed');
-                $('body').css('padding-top', '90px');
-            } else if ($(this).scrollTop() < 90) {
-                $('.header').removeClass('fixed');
-                $('body').css('padding-top', '0');
+    $(window).on('load', function() {
+        let phones = [
+            { 'mask': '+7 \\ \\ ###-###-##-##' }
+        ];
+
+        $('input[type=tel]').inputmask({
+            mask: phones,
+            greedy: false,
+            definitions: {
+                '#': {
+                    validator: '[0-9]',
+                    cardinality: 1
+                }
             }
-        }
+        });
     });
+
+    // $(window).scroll(function() {
+    //     if ($(window).width() > '991') {
+    //         if ($(this).scrollTop() > 90) {
+    //             $('.header').addClass('fixed');
+    //             $('body').css('padding-top', '90px');
+    //         } else if ($(this).scrollTop() < 90) {
+    //             $('.header').removeClass('fixed');
+    //             $('body').css('padding-top', '0');
+    //         }
+    //     }
+    // });
 
     $('select').niceSelect();
 
+});
 
+$('.btn-more').click(function(e) {
+    e.preventDefault();
+    if ($(this).closest('.rewiews').hasClass('active')) {
+        $(this).closest('.rewiews').removeClass('active');
+        $('.btn-more').text('Показать больше');
+    } else {
+        $('.btn-more').text('Свернуть');
+        $(this).closest('.rewiews').addClass('active');
+    }
 });
 
 $(".menu a").click(function() {
