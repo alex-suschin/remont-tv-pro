@@ -307,6 +307,19 @@ img {
 .header {
     padding: 0 0 0 0;
     margin-bottom: 93px;
+    @include tr2;
+}
+
+.header.fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
 }
 
 .wrapper {

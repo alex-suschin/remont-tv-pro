@@ -17,17 +17,17 @@ $(function() {
         });
     });
 
-    // $(window).scroll(function() {
-    //     if ($(window).width() > '991') {
-    //         if ($(this).scrollTop() > 90) {
-    //             $('.header').addClass('fixed');
-    //             $('body').css('padding-top', '90px');
-    //         } else if ($(this).scrollTop() < 90) {
-    //             $('.header').removeClass('fixed');
-    //             $('body').css('padding-top', '0');
-    //         }
-    //     }
-    // });
+    $(window).scroll(function() {
+        if ($(window).width() > '991') {
+            if ($(this).scrollTop() > 44) {
+                $('.header').addClass('fixed');
+                $('body').css('padding-top', '185px');
+            } else if ($(this).scrollTop() < 44) {
+                $('.header').removeClass('fixed');
+                $('body').css('padding-top', '0');
+            }
+        }
+    });
 
     $('select').niceSelect();
 
